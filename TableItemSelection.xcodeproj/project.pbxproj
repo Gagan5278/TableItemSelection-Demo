@@ -18,6 +18,9 @@
 		CE4C24BB190675C9006F730D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4C24BA190675C9006F730D /* Default-568h@2x.png */; };
 		CE4C24BE190675C9006F730D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4C24BD190675C9006F730D /* ViewController.m */; };
 		CE4C24C1190675C9006F730D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C24BF190675C9006F730D /* ViewController.xib */; };
+		CE4C24CA190678D1006F730D /* TableCellSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4C24C9190678D1006F730D /* TableCellSelection.m */; };
+		CE4C24D1190693B0006F730D /* MultiSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4C24CF190693B0006F730D /* MultiSelection.m */; };
+		CE4C24D2190693B0006F730D /* MultiSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C24D0190693B0006F730D /* MultiSelection.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +37,14 @@
 		CE4C24B6190675C9006F730D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CE4C24B8190675C9006F730D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CE4C24BA190675C9006F730D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CE4C24BC190675C9006F730D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CE4C24BD190675C9006F730D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CE4C24BC190675C9006F730D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		CE4C24BD190675C9006F730D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		CE4C24C0190675C9006F730D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		CE4C24C8190678D1006F730D /* TableCellSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCellSelection.h; sourceTree = "<group>"; };
+		CE4C24C9190678D1006F730D /* TableCellSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCellSelection.m; sourceTree = "<group>"; };
+		CE4C24CE190693B0006F730D /* MultiSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSelection.h; sourceTree = "<group>"; };
+		CE4C24CF190693B0006F730D /* MultiSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSelection.m; sourceTree = "<group>"; };
+		CE4C24D0190693B0006F730D /* MultiSelection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiSelection.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +91,11 @@
 		CE4C24AA190675C9006F730D /* TableItemSelection */ = {
 			isa = PBXGroup;
 			children = (
+				CE4C24C71906789F006F730D /* TableCell */,
+				CE4C24CD1906938E006F730D /* MultipleSelection */,
+				CE4C24CC1906937F006F730D /* SingleSelction */,
 				CE4C24B3190675C9006F730D /* AppDelegate.h */,
 				CE4C24B4190675C9006F730D /* AppDelegate.m */,
-				CE4C24BC190675C9006F730D /* ViewController.h */,
-				CE4C24BD190675C9006F730D /* ViewController.m */,
-				CE4C24BF190675C9006F730D /* ViewController.xib */,
 				CE4C24AB190675C9006F730D /* Supporting Files */,
 			);
 			path = TableItemSelection;
@@ -105,6 +113,35 @@
 				CE4C24BA190675C9006F730D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE4C24C71906789F006F730D /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C24C8190678D1006F730D /* TableCellSelection.h */,
+				CE4C24C9190678D1006F730D /* TableCellSelection.m */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		CE4C24CC1906937F006F730D /* SingleSelction */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C24BC190675C9006F730D /* ViewController.h */,
+				CE4C24BD190675C9006F730D /* ViewController.m */,
+				CE4C24BF190675C9006F730D /* ViewController.xib */,
+			);
+			path = SingleSelction;
+			sourceTree = "<group>";
+		};
+		CE4C24CD1906938E006F730D /* MultipleSelection */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C24CE190693B0006F730D /* MultiSelection.h */,
+				CE4C24CF190693B0006F730D /* MultiSelection.m */,
+				CE4C24D0190693B0006F730D /* MultiSelection.xib */,
+			);
+			path = MultipleSelection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +200,7 @@
 				CE4C24B9190675C9006F730D /* Default@2x.png in Resources */,
 				CE4C24BB190675C9006F730D /* Default-568h@2x.png in Resources */,
 				CE4C24C1190675C9006F730D /* ViewController.xib in Resources */,
+				CE4C24D2190693B0006F730D /* MultiSelection.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +214,8 @@
 				CE4C24B1190675C9006F730D /* main.m in Sources */,
 				CE4C24B5190675C9006F730D /* AppDelegate.m in Sources */,
 				CE4C24BE190675C9006F730D /* ViewController.m in Sources */,
+				CE4C24CA190678D1006F730D /* TableCellSelection.m in Sources */,
+				CE4C24D1190693B0006F730D /* MultiSelection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +236,7 @@
 				CE4C24C0190675C9006F730D /* en */,
 			);
 			name = ViewController.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,21 +1,25 @@
 //
-//  ViewController.m
+//  MultiSelection.m
 //  TableItemSelection
 //
 //  Created by Gagan on 22/04/14.
 //  Copyright (c) 2014 Gagan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MultiSelection.h"
 #import "TableCellSelection.h"
-@interface ViewController ()
+@interface MultiSelection ()
 
 @end
 
-@implementation ViewController
+@implementation MultiSelection
+@synthesize mutableIdexSet;
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    mutableIdexSet=[[NSMutableIndexSet alloc]init];
 }
 
 #pragma mark-TabelView delegate
@@ -36,9 +40,10 @@
     if(cell==nil)
     {
         cell=[[TableCellSelection alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.cellSelectionColor=[UIColor grayColor];
+        cell.cellSelectionColor=[UIColor blackColor];
     }
-        if([self.checkedIndexPath isEqual:indexPath])
+    
+    if([self.mutableIdexSet containsIndex:indexPath.row])
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
@@ -51,25 +56,19 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if(self.checkedIndexPath)
+    if([self.mutableIdexSet containsIndex:indexPath.row])
     {
-        UITableViewCell* uncheckCell = [tableView
-                                        cellForRowAtIndexPath:self.checkedIndexPath];
+        UITableViewCell* uncheckCell = [tableView cellForRowAtIndexPath: [NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         uncheckCell.accessoryType = UITableViewCellAccessoryNone;
+        [self.mutableIdexSet removeIndex:indexPath.row];
     }
-    if([self.checkedIndexPath isEqual:indexPath])
-    {
-        self.checkedIndexPath = nil;
-    }
-    else
+     else
     {
         UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        self.checkedIndexPath = indexPath;
+        [self.mutableIdexSet addIndex:indexPath.row];
     }
 }
-
 
 - (void)didReceiveMemoryWarning
 {

@@ -9,15 +9,22 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
-
+#import "MultiSelection.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _tabBarController=[[UITabBarController alloc]init];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    UIViewController *viewControllerSingle = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    MultiSelection *multiSelection=[[MultiSelection alloc]initWithNibName:@"MultiSelection" bundle:nil];
+    _tabBarController.viewControllers=[NSArray arrayWithObjects:viewControllerSingle,multiSelection, nil];
+    self.window.rootViewController = self.tabBarController;
+   UITabBarItem *item1= [[[self.tabBarController tabBar]items] objectAtIndex:0];
+    item1.title=@"Single Selection";
+     UITabBarItem *item2= [[[self.tabBarController tabBar]items] objectAtIndex:1];
+    item2.title=@"Multiple Selection";
     [self.window makeKeyAndVisible];
     return YES;
 }
